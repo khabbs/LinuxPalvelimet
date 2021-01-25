@@ -1,6 +1,11 @@
 H1
 
 a)Livetikku
+Valitsin asennettavaksi Zorin OS:n, latasin ISO tiedoston https://zorinos.com/download/15/lite/64/. USB Boot tikun luontiin käytin UNetbootin, latasin sen komennoilla:
+sudo add-apt-repository ppa:gezakovacs/ppa
+sudo apt-get update
+sudo apt-get install unetbootin
+Unetbootin on yksinkertainen työkalu, joten valitsin vain ISO imagen sekä muistitikun sijainnin. Tikun konfiguroinnissa meni noin 10 minuuttia. Valmistumisen jälkeen, testasin tikun toimivuuden. Kone käynnistyi Zoriniin valittuani Bios:ista USB boot.
 
 b)Koneen rauta
 H/W path         Device     Class          Description
@@ -52,7 +57,7 @@ H/W path         Device     Class          Description
 
 
 c)Avasin Ubuntu Software ohjelman ja etsin erilaisia sovelluksia asennettavaksi. Asensin koneelleni GIMP, Gnuchess ja Thunderbird ohjelmistot. Kaikki kolme oli erittäin helppo löytää ja asentaa GUI:n kautta. Poistin ja asensin ohjelmat myös terminaalin kautta käyttäen netistä löytämieni ohjeiden perusteella. Asennus onnistui sujuvasti seuraavilla komennoilla:
-sudo apt update && sudo apt install gimp gimp-gmic
+sudo snap install gimp 
 sudo snap install gnuchess
 sudo apt-get install thunderbird
 
@@ -72,3 +77,4 @@ Tekstinkäsittelyojelma
 Mozilla Firefox
 Internet-selain
 
+h1 Kotitehtävä
