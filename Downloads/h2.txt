@@ -1,0 +1,82 @@
+﻿Tämä tehtävä on tehty 26.1. Samsung Series 5 Notebookilla, käyttöjärjestelmänä Ubuntu 18.04 LTS
+
+
+a)Lokitapahtumien aiheuttaminen
+
+
+Avasin terminaalin ja 2 lisätabia
+Avasin kahteen niistä autentikointi lokin ja system lokin komennoilla:
+$ tail -f /var/log/auth.log
+$ tail -f /var/log/syslog
+
+
+Ajoin komennon ‘sudo apt-get update’
+auth loki: # Sudo oikeuksien käyttö aiheuttaa aina loki tapahtuman. Lokista näkee millä tunnuksella ja mistä lokaatiosta tietty komento on ajettu
+Jan 27 21:35:54 sudo:           jj : TTY=pts/0 ; PWD=/home/jj ; USER=root ; COMMAND=/usr/bin/apt-get update
+Jan 27 21:35:54 sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Jan 27 21:36:09 sudo: pam_unix(sudo:session): session closed for user root
+
+
+System loki: # apt-get update komennosta johtuvia ilmoituksia
+Jan 27 21:36:04 gnome-software[3508]: failed to call gs_plugin_add_updates on fwupd: No releases found for device: Not compatible with bootloader version: failed predicate [BOT03.0[0-1]_* regex BOT03.02_B0009]
+Jan 27 21:36:05 bba gnome-software[3508]: tried overwriting io.snapcraft.eks-xKFtlGimGVPMhubDmVct38AOzAA4j0qh key GnomeSoftware::FeatureTile-css from border-color: #000000;#012color: transparent;#012font-size: 30px;#012background: url('/home/jj/.cache/gnome-software/cssresource/65a90be999885ae00e8124a4d1373cd558f7dae9-amazon-eks-banner.jpg') no-repeat;#012background-position: center;#012background-size: contain; to border-color: #000000;#012color: transparent;#012font-size: 30px;#012background: url('https://dashboard.snapcraft.io/site_media/appmedia/2020/12/amazon-eks-banner.jpg') no-repeat;#012background-position: center;#012background-size: contain;
+Jan 27 21:36:06 PackageKit: resolve transaction /2942_becbebee from uid 1000 finished with success after 1097ms
+Jan 27 21:36:06 gnome-software[3508]: Failed to load snap icon: local snap has no icon
+Jan 27 21:36:07 gnome-software[3508]: message repeated 4 times: [ Failed to load snap icon: local snap has no icon]
+
+
+b)Unelmien komentorivi: ‘sudo apt-get install gnome-chess’
+
+
+c)Kolme komentorivi ohjelmaa
+
+
+Etsin komentorivi sovelluksia komennolla ‘apt cache-search terminal | grep command line ’
+Asensin sovellukset komennolla ‘sudo apt install translate-shell asciiart expect-lite’
+Kokeilua varten ‘cd /usr/bin/’
+Asciiart #Komentorivi sovellus, jolla voi tehdä kuvista ASCII taidetta
+Translate-shell #Google translate sovellus 
+Expect-lite #Komentorivi sovellus, jota käytetään skritpiten automaatioon. (Laitettu muistiin myöhempäää käyttöä varten)
+
+
+g)SSH-demonin asennus
+
+
+23.15 ajoin seuraavat komennot:
+ ‘sudo apt-get install openssh-server’ #OpenSSH asennus
+‘sudo systemctl enable ssh’ #SSH service enablointi
+‘sudo systemctl start ssh’ #SSH service käynnistys
+Loin SSH avaimen ilman salasanaa (huom tarkoituksella root, testaan onko root kirjautuminen defaultina sallittu)
+‘sudo ssh-keygen’ #SSH avaimen luonti
+‘ssh -i /usr/bin/mykey user@host’ #
+
+
+The authenticity of host ‘host’ (Koneen IP)' can't be established.
+ECDSA key fingerprint is SHA256:’xxx’
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added ‘host,koneen IP' (ECDSA) to the list of known hosts.
+
+
+Tämän jälkeen testasin kirjautumista komennolla ‘ssh user@host’
+Testattu myös tiedoston lähetystä ‘scp /home/jj/test.txt user@host:/home/jj/Kansio’
+
+
+Git
+Klo 23.45 Asensin sovelluksen komennolla ‘sudo apt install git’
+Avasin SSH avaimen komennolla ‘cat /usr/bin/mykey.pub’ ja lisäsin sen GitHubiin lähdesivuston ⁶ ohjeella.
+Loin uuden paikallisen git repon ‘git init’ ja vein tämän raportin sinne. 
+
+
+Vaikeampi vapaaehtoinen bonuskohta, ei ole opetettu vielä: Asenna SSH-demoni. Kokeile omalla ssh-palvelimellasi jotain seuraavista: ssh-copy-id, sshfs, scp tai git. (Helpoin lienee scp: ‘scp foo.txt tero@example.com:’)
+
+
+Lähteet:
+¹Karvinen 2020: Command Line Basics Revisited
+³Karvinen 2012: Raportin kirjoittaminen
+⁴https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/ 
+⁵https://www.ssh.com/ssh/copy-id 
+⁶https://support.cloudways.com/using-git-command-line-ssh/ 
+
+
+Tätä dokumenttia saa kopioida ja muokata GNU General Public License (versio 2 tai uudempi) mukaisesti. http://www.gnu.org/licenses/gpl.html
