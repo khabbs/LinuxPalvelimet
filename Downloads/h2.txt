@@ -70,7 +70,7 @@ Lisäsin Githubin osoitteen, jonne repository lähetetään ‘git remote add or
 Koitin lisätä repository muutokset Github repooni ‘git push origin master’, mutta sain virheilmoituksen:
 error: src refspec master does not match any.
 error: failed to push some refs to 'https://github.com/khabbs/hh'
-Unohdin tallentaa muutokset ja valmistella ne uploadia varten. Ajoin komennon ‘git commit -m "TEST"’ ja sen jälkeen uudelleen komennon ‘git push origin master’. Nyt muutokset eli uusi kansio ja tiedosto, näkyvät GitHubissa https://github.com/khabbs/hh/blob/master/Downloads/h2.txt 
+Unohdin tallentaa muutokset ja valmistella ne uploadia varten. Ajoin komennon ‘git commit -m "TEST"’ ja sen jälkeen uudelleen komennon ‘git push origin master’. Klo 00:20 Nyt muutokset eli uusi kansio ja tiedosto, näkyvät GitHubissa https://github.com/khabbs/hh/blob/master/Downloads/h2.txt 
 
 Lähteet:
 ¹Karvinen 2020: Command Line Basics Revisited
