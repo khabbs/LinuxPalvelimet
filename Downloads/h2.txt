@@ -65,11 +65,12 @@ Testattu myös tiedoston lähetystä ‘scp /home/jj/test.txt user@host:/home/jj
 Git
 Klo 23.45 Asensin sovelluksen komennolla ‘sudo apt install git’
 Avasin SSH avaimen komennolla ‘cat /usr/bin/mykey.pub’ ja lisäsin sen GitHubiin lähdesivuston ⁶ ohjeella.
-Loin uuden paikallisen git repon ‘git init’ ja vein tämän raportin sinne. 
-
-
-Vaikeampi vapaaehtoinen bonuskohta, ei ole opetettu vielä: Asenna SSH-demoni. Kokeile omalla ssh-palvelimellasi jotain seuraavista: ssh-copy-id, sshfs, scp tai git. (Helpoin lienee scp: ‘scp foo.txt tero@example.com:’)
-
+Loin uuden paikallisen git repon ‘git init’ ja vein tämän raportin sinne ‘git add /home/jj/Downloads/h2.txt’
+Lisäsin Githubin osoitteen, jonne repository lähetetään ‘git remote add origin https://github.com/khabbs/hh’
+Koitin lisätä repository muutokset Github repooni ‘git push origin master’, mutta sain virheilmoituksen:
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/khabbs/hh'
+Unohdin tallentaa muutokset ja valmistella ne uploadia varten. Ajoin komennon ‘git commit -m "TEST"’ ja sen jälkeen uudelleen komennon ‘git push origin master’. Nyt muutokset eli uusi kansio ja tiedosto, näkyvät GitHubissa https://github.com/khabbs/hh/blob/master/Downloads/h2.txt 
 
 Lähteet:
 ¹Karvinen 2020: Command Line Basics Revisited
@@ -77,6 +78,5 @@ Lähteet:
 ⁴https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/ 
 ⁵https://www.ssh.com/ssh/copy-id 
 ⁶https://support.cloudways.com/using-git-command-line-ssh/ 
-
 
 Tätä dokumenttia saa kopioida ja muokata GNU General Public License (versio 2 tai uudempi) mukaisesti. http://www.gnu.org/licenses/gpl.html
