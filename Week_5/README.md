@@ -3,7 +3,8 @@
 
 Koodaa ja julkaise uusi tietokantaa ja lomakkeita hyödyntävä weppipalvelu
 
-Tämän tehtävän pohjalle kopioin ohjelmakoodin suoraan seuraavalta sivulta: https://www.pythonistaplanet.com/flask-to-do-list/. Ohjelmassa lisätään, muokataan ja poistetaan tehtävälistalta tehtäviä. 
+Tämän tehtävän pohjalle kopioin ohjelmakoodin suoraan seuraavalta sivulta: https://www.pythonistaplanet.com/flask-to-do-list/. Ohjelmassa lisätään, muokataan ja poistetaan tehtävälistalta tehtäviä.
+
 
 Flaskin ja tarvittavien moduulien asennus
 ```bash
@@ -42,19 +43,19 @@ Troubleshoottasin ja googlailin tuota niin pitkään, että jätin tehtävän ke
 
 Seuraavaksi loin base.html koodiin mallin, jota halusin hyödyntää useammallakin sivulla. 
 
-![base](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/base.html.png)
+![base](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/photos/base.html.png)
 
 
 Loin index.html siv↓n¸ jolle periytin base.html tiedostosta mallin. Vaihdoin myös Flask app.py tiedostoon index.html sivun base.html sijaan.
 
-![index](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/index.html.png)
+![index](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/photos/index.html.png)
 
 
 Seuraavaksi loin taskeihin liittyvien toiminnallisuudet index.html sivulle sekä app.py.
-![tasks](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/tasks.png)
+![tasks](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/photos/tasks.png)
 
 
-![app.py](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/app.py.png)
+![app.py](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/photos/app.py.png)
 
 
 Törmäsin virheilmoitukseen “NameError: name 'request' is not defined”, joka nopeasti ratkesi tuomalla puuttuva request ja redirect objekti.
@@ -63,10 +64,10 @@ Törmäsin virheilmoitukseen “NameError: name 'request' is not defined”, jok
 from flask import request, redirect
 ```
 Seuraavaksi kokeilin sovelluksen toimintaa ja törmäsin heti virheeseen: “jinja2.exceptions.UndefinedError: 'task' is undefined”
-Googlailu ei tuottanut lisäarvoa, sillä virheilmoitus on suhteellisen selkeä. Kävin läpi tekemääni koodia ja huomasin kirjoitus virheen index.html sivulla: {% for tasks in tasks %}. Sen korjaamalla oikeaan muotoon {% for task in tasks %}, taskien lisäys onnistui. Taskin nimi ei kuitenkaan näkynyt listalla ollenkaan, update näkymässä kaikki oli ok.
+Googlailu ei tuottanut lisäarvoa, sillä virheilmoitus on suhteellisen selkeä. Kävin läpi tekemääni koodia ja huomasin kirjoitusvirheen index.html sivulla: {% for tasks in tasks %}. Sen korjaamalla oikeaan muotoon {% for task in tasks %}, taskien lisäys onnistui. Taskin nimi ei kuitenkaan näkynyt listalla ollenkaan, update näkymässä kaikki oli ok.
 
-![todo-list](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/todo-list.png)
-![updatetask](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/updatetask.png)
+![todo-list](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/photos/todo-list.png)
+![updatetask](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/photos/updatetask.png)
 
 Koodin läpikäymisen jälkeen, tämä kuten liian moni, oli kirjoitusvirheestä kiinni. Olin unohtanut sulkea juuri ennen taskien sisällön tuomista
 
@@ -75,14 +76,13 @@ Koodin läpikäymisen jälkeen, tämä kuten liian moni, oli kirjoitusvirheestä
 ``` 
 
 Lopputulos:
-![todo-complete](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/todo-complete.png)
+![todo-complete](https://github.com/khabbs/LinuxPalvelimet/blob/main/Week_5/photos/todo-complete.png)
 
 
 #### Lähteet:
 https://www.pythonistaplanet.com/flask-to-do-list/
 https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart/ 
 Troubleshoot kaninkolo googlaus
-
 
 
 
