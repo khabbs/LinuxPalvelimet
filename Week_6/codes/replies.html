@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Lempieläin äänestys </h1>
+<form method=post action="/">
+	{{ form.csrf_token }}
+	{% for field in form if not field.name in ["csrf_token"] %}
+		<p>{{ field.label }}: {{ field }} <b>{{ " ".join(field.errors) }}</b></p>
+	{% endfor %}
+	<input type="submit">
+</form>
+
+<h2>Vastaukset</h2>
+{% for reply in replies %}
+<p>{{ reply.Lempieläin }}</p>
+{% endfor %}
+
+{% endblock %}
