@@ -1,3 +1,5 @@
+Tämä tehtävä on tehty 26.1. Samsung Series 5 Notebookilla, käyttöjärjestelmänä Ubuntu 18.04 LTS
+
 # H6
 ### Yhteenveto
 
