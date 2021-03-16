@@ -1,4 +1,8 @@
+Tämä tehtävä on tehty 26.1. Samsung Series 5 Notebookilla, käyttöjärjestelmänä Ubuntu 18.04 LTS
+
+
 H1
+
 
 a)Livetikku
 Valitsin asennettavaksi Zorin OS:n, latasin ISO tiedoston https://zorinos.com/download/15/lite/64/. USB Boot tikun luontiin käytin UNetbootin, latasin sen komennoilla:
